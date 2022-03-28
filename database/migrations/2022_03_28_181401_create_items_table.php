@@ -15,11 +15,14 @@ return new class extends Migration
     {
         Schema::create('item', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
+            $table->integer('status_id')->unsigned();
+            $table->string('description');
+            $table->string('answer');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('category');
             $table->foreign('status_id')->references('id')->on('status');
-            $table->string('description');
-            $table->string('answer');
             $table->timestamps();
         });
     }

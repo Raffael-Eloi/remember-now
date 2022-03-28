@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
 
@@ -46,9 +47,9 @@ Route::group(['prefix' => 'status'], function () use ($router) {
 });
 
 Route::group(['prefix' => 'item'], function () use ($router) {
-    Route::post('/', [StatusController::class, 'createStatus']);
-    Route::get('/', [StatusController::class, 'getAllStatus']);
-    Route::get('/{id}', [StatusController::class, 'getStatus']);
-    Route::put('/{id}', [StatusController::class, 'updateStatus']);
-    Route::delete('/{id}', [StatusController::class, 'deleteStatus']);
+    Route::post('/', [ItemController::class, 'createItem']);
+    Route::get('/', [ItemController::class, 'getAllItems']);
+    Route::get('/{id}', [ItemController::class, 'getItem']);
+    Route::put('/{id}', [ItemController::class, 'updateItem']);
+    Route::delete('/{id}', [ItemController::class, 'deleteItem']);
 });
