@@ -44,7 +44,7 @@ class CategoryController extends Controller
             $category->save();
 
             return response()->json([
-                "message" => "Categoy updated successfully"
+                "message" => "Category updated successfully"
             ], 200);
         } else {
             return response()->json([
